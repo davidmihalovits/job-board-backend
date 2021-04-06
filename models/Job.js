@@ -35,3 +35,18 @@ const Job = db.define("job", {
 });
 
 module.exports = Job;
+
+/*
+CREATE TABLE jobs (
+	title VARCHAR (255),
+    type VARCHAR (255),
+    salary VARCHAR (255),
+    location VARCHAR (255),
+    description TEXT,
+    company VARCHAR (255),
+    website VARCHAR (255),
+    logo VARCHAR (255),
+    about TEXT,
+    email VARCHAR (255)
+);
+*/

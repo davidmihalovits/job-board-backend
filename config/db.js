@@ -13,4 +13,9 @@ module.exports = new Sequelize(
 const { Client } = require("pg");
 const { Sequelize } = require("sequelize");
 
-module.exports = new Sequelize(process.env.DATABASE_URL, { logging: false });
+module.exports = new Sequelize({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false,
+    },
+});
