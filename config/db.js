@@ -15,14 +15,3 @@ module.exports = new Sequelize(
         },
     }
 );
-
-/*const { Client } = require("pg");
-const { Sequelize } = require("sequelize");
-require("dotenv").config();
-
-module.exports = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false,
-    },
-});*/
