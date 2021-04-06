@@ -1,7 +1,6 @@
 const express = require("express");
 const compression = require("compression");
 const cors = require("cors");
-const bodyParser = require("body-parser");
 const db = require("./config/db");
 const { getJobs } = require("./routes/getJobs");
 const { getJob } = require("./routes/getJob");
@@ -13,8 +12,6 @@ const app = express();
 app.use(compression());
 app.use(cors());
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 db.authenticate().then(() => console.log("Postgres database connected."));
 db.sync();
 
