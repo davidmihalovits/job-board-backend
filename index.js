@@ -12,6 +12,7 @@ const app = express();
 app.use(compression());
 app.use(cors());
 app.use(express.json());
+db.connect();
 db.authenticate().then(() => console.log("Postgres database connected."));
 db.sync({ alter: true });
 
