@@ -8,8 +8,10 @@ const prod = process.env.DATABASE_URL; // heroku Postgres addon
 module.exports = new Sequelize(
     process.env.NODE_ENV === "production" ? prod : dev,
     {
-        ssl: {
-            rejectUnauthorized: false,
+        dialectOptions: {
+            ssl: {
+                rejectUnauthorized: false,
+            },
         },
     }
 );
