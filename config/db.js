@@ -11,10 +11,10 @@ module.exports = new Sequelize(
 );*/
 
 const { Client } = require("pg");
+const { Sequelize } = require("sequelize");
 
-module.exports = new Client({
-    connectionString:
-        "postgres://bdkuursokprwmp:f762260806a671162a696d16e048ad43f55ae033479710f948c32739114a137b@ec2-3-233-43-103.compute-1.amazonaws.com:5432/d8tcsd3lq5ihpb",
+module.exports = new Sequelize({
+    connectionString: process.env.DATABASE_URL,
     ssl: {
         rejectUnauthorized: false,
     },
