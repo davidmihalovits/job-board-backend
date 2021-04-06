@@ -13,7 +13,7 @@ app.use(compression());
 app.use(cors());
 app.use(express.json());
 db.authenticate().then(() => console.log("Postgres database connected."));
-db.sync();
+db.sync({ alter: true });
 
 app.get("/getJobs", getJobs);
 app.get("/getJob/:id", getJob);
